@@ -38,7 +38,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-
+  min-height: 100vh;
 }
 
 #contributor {
@@ -90,7 +90,7 @@ main {
 
 @media screen and (width <=500px) {
   .quote-author {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -107,6 +107,7 @@ main {
   .controller {
     width: 100%;
     padding: 10px;
+    margin-top: 80px;
   }
 }
 
@@ -241,6 +242,25 @@ body {
 
 .container {
   background: rgba(237, 237, 237, 1);
+}
+
+
+@media screen and (width <=500px) {
+  /* remove outer rounded corner */
+  .container{
+    border: none;
+    box-shadow: none;
+    /* 25px top border and 25px bottom border */
+    min-height: calc(100vh - 50px);
+    margin-top: 0;
+  }
+
+  /* add inner rounded corner */
+  main.w-full{
+    min-height: 100vh;
+    border: 25px solid #272727;
+    background-color: #272727;
+  }
 }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
